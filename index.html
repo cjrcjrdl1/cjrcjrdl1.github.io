@@ -4,167 +4,218 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume | Minyeong Choe</title>
+
+  <!-- Fonts: Noto Serif KR (Korean) + Noto Serif (Latin) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Times New Roman', Times, serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
+    :root{
+      --text:#222;
+      --muted:#555;
+      --rule:#cfcfcf;
+      --maxw:820px;
     }
-    h1, h2, h3 {
-      font-weight: bold;
-      margin-bottom: 0.2em;
+
+    /* Base */
+    html,body{background:#fff;}
+    body{
+      font-family: 'Noto Serif KR','Noto Serif', Georgia, 'Times New Roman', serif;
+      font-size: 15px;
+      line-height: 1.56;
+      color: var(--text);
+      max-width: var(--maxw);
+      margin: 48px auto;
+      padding: 0 22px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    h1 {
-      font-size: 2em;
-      text-align: center;
+
+    /* Headings */
+    h1,h2,h3{margin:0 0 .35em 0; font-weight:600;}
+    h1{
+      font-size: 28px;
+      text-align:center;
+      letter-spacing:.2px;
     }
-    .contact {
-      text-align: center;
-      font-size: 0.9em;
-      margin-bottom: 1.5em;
-    }
-    .section {
-      margin-bottom: 1.5em;
-    }
-    .section h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
-      font-size: 1.2em;
+    h2{
+      font-size: 15px;
       text-transform: uppercase;
+      letter-spacing: .8px;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: .35em;
+      margin-top: 1.6em;
     }
-    .item {
-      margin-bottom: 0.8em;
+
+    /* Contact */
+    .contact{
+      text-align:center;
+      font-size: 14px;
+      margin: 6px 0 20px;
     }
-    .item-title {
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
+    .contact a{ color:#0b65c2; text-decoration:none; }
+    .contact a:hover{ text-decoration:underline; }
+
+    /* Sections */
+    .section{ margin-bottom: 1.2em; }
+
+    /* Two-column header line (title left, place/date right) */
+    .item{ margin: .85em 0; }
+    .item-head{
+      display:flex; gap:16px; align-items:baseline; justify-content:space-between;
+      font-weight:600;
     }
-    .item-subtitle {
-      font-style: italic;
-      font-size: 0.9em;
+    .item-meta{ color: var(--muted); font-weight:400; }
+
+    .item-subtitle{
+      font-style: italic; color: var(--muted); margin-top: 2px;
     }
-    ul {
-      margin: 0.3em 0 0.3em 1.2em;
+    .item ul{ margin: .35em 0 .2em 1.2em; }
+
+    /* Skills chips (조용한 스타일) */
+    .skills span{
+      display:inline-block; border:1px solid var(--rule);
+      padding: 2px 8px; margin: 2px 6px 2px 0; border-radius: 4px; font-size: 13px;
+      background:#f9f9f9;
     }
-    .skills span {
-      display: inline-block;
-      background: #f0f0f0;
-      padding: 4px 8px;
-      margin: 2px;
-      border-radius: 4px;
-      font-size: 0.85em;
+
+    /* Publications */
+    .pub-list{ list-style:none; margin: .2em 0 0; padding:0; }
+    .pub-list li{
+      position:relative; margin: 8px 0 10px; padding-left: 1.1em; line-height: 1.48;
     }
-    /* Publications (LaTeX-ish) */
-  .pub-list{ list-style:none; margin:0; padding:0; }
-  .pub-list li{
-    position:relative; margin:8px 0 10px; padding-left:1.1em; line-height:1.45;
-    text-indent:0; /* 행걸침 유지 */
-  }
-  .pub-list li::before{ content:"•"; position:absolute; left:0; top:0; color:#666; }
-  
-  .pub-authors{ font-variant: small-caps; }        /* 영문 저자만 작은캡스 */
-  .pub-title{ font-style: italic; }                /* 제목은 기울임 + 한국어도 자연스러움 */
-  .pub-title::before{ content:"“"; }               /* 제목 따옴표 자동 */
-  .pub-title::after{ content:"”"; }
-  .pub-venue{ font-style: italic; }                /* 저널/학회명 기울임 */
-  .pub-meta{ color:#555; }                         /* accepted, 년도 등 */
+    .pub-list li::before{ content:"•"; position:absolute; left:0; top:0; color:#666; }
+    .pub-authors{ font-variant: small-caps; }
+    .pub-title{ font-style: italic; }
+    .pub-title::before{ content:"“"; }
+    .pub-title::after{ content:"”"; }
+    .pub-venue{ font-style: italic; }
+    .pub-meta{ color: var(--muted); }
+
+    /* Print tweaks */
+    @media print{
+      body{ margin:0; padding:0 12mm; font-size:12pt; }
+      h1{ font-size:20pt; }
+      h2{ font-size:11pt; }
+      .skills span{ border-color:#ccc; background:#fff; }
+      a{ color:inherit; text-decoration:none; }
+    }
+    .fancy-list{ list-style:none; margin:0; padding:0; }
+    .fancy-list li{
+      margin: 8px 0 10px;
+      padding-left: 1.2em;
+      position: relative;
+      line-height: 1.45;
+    }
+    .fancy-list li::before{
+      content:"◆";  /* 불릿 대신 다이아몬드 모양 */
+      position:absolute;
+      left:0; top:0;
+      color:#444;
+      font-size:0.8em;
+    }
+    
+    .patent-title, .award-title{ font-weight:600; }
+    .patent-meta, .award-meta{ color:#555; font-size:0.95em; }
   </style>
 </head>
 <body>
   <h1>Minyeong Choe</h1>
   <div class="contact">
-    <a href="mailto:minyeong@chosun.ac.kr">minyeong@chosun.ac.kr</a> | <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+    <a href="mailto:minyeong@chosun.ac.kr">minyeong@chosun.ac.kr</a> ·
+    <a href="#">LinkedIn</a> ·
+    <a href="#">GitHub</a>
   </div>
 
+  <!-- Education -->
   <div class="section">
     <h2>Education</h2>
+
     <div class="item">
-      <div class="item-title">
-        <span>Chosun University</span>
-        <span>Gwangju, South Korea</span>
+      <div class="item-head">
+        <div>Chosun University</div>
+        <div class="item-meta">Gwangju, South Korea</div>
       </div>
       <div class="item-subtitle">Master of Engineering in Information and Communication Engineering</div>
-      <div>Feb 2025 –</div>
+      <div class="item-meta">Feb 2025 –</div>
     </div>
+
     <div class="item">
-      <div class="item-title">
-        <span>Chosun University</span>
-        <span>Gwangju, South Korea</span>
+      <div class="item-head">
+        <div>Chosun University</div>
+        <div class="item-meta">Gwangju, South Korea</div>
       </div>
       <div class="item-subtitle">Bachelor of Engineering in Information and Communication Engineering (Major in Information Security)</div>
-      <div>Mar 2018 – Feb 2025</div>
+      <div class="item-meta">Mar 2018 – Feb 2025</div>
     </div>
+  </div>
 
+  <!-- Publications -->
   <div class="section">
-  <h2>Publications</h2>
-  <ul class="pub-list">
-    <li>
-      <span class="pub-authors">Minyeong Choe</span>, Haehyun Cho, Changho Seo, and <span class="pub-authors">Hyunil Kim*</span>,
-      <span class="pub-title">Do All Autoregressive Transformers Remember Facts the Same Way? A Cross-Architecture Analysis of Recall Mechanisms.</span>
-      <span class="pub-venue">The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)</span>,
-      <span class="pub-meta">to appear (2025)</span>.
-    </li>
-    <li>
-      <span class="pub-authors">Minyeong Choe</span>, Cheolhee Park, Changho Seo, and <span class="pub-authors">Hyunil Kim*</span>,
-      <span class="pub-title">SDBA: A Stealthy and Long-Lasting Durable Backdoor Attack in Federated Learning.</span>
-      <span class="pub-venue">IEEE Transactions on Dependable and Secure Computing</span>,
-      <span class="pub-meta">accepted (IF 7.5 / Top 5.3% / JCR 2024) (2025)</span>.
-    </li>
-    <li>
-      임창훈, 김승한, <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
-      <span class="pub-title">연합학습 환경에서의 Triggerless Clean-label 백도어 공격 연구.</span>
-      <span class="pub-venue">한국정보보호학회 하계학술대회</span> (2025).
-    </li>
-    <li>
-      <span class="pub-authors">최민영</span>, 임창훈, 박경철, <span class="pub-authors">김현일*</span>,
-      <span class="pub-title">Causal tracing 기반 소형 언어 모델의 지식 저장 구조 및 백도어 취약 지점 분석.</span>
-      <span class="pub-venue">한국정보보호학회 하계학술대회</span> (2025).
-    </li>
-    <li>
-      <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
-      <span class="pub-title">연합학습에서 약한 차분 프라이버시와 다양한 방어 기법 결합을 통한 백도어 공격 방어 연구.</span>
-      <span class="pub-venue">한국정보보호학회논문지</span>, 2025.
-      <span class="pub-meta">(2024 한국정보보호학회 호남지부 우수논문상 수상 – 학술대회 발표 확장버전)</span>
-    </li>
-    <li>
-      Seunghan Kim, <span class="pub-authors">Minyeong Choe</span>, and <span class="pub-authors">Hyunil Kim*</span>,
-      <span class="pub-title">Enhancing the robustness of federated learning with unified defense against backdoor attack.</span>
-      <span class="pub-venue">The 14th International Conference on Smart Media & Applications</span>,
-      <span class="pub-meta">Best paper award (2024)</span>.
-    </li>
-    <li>
-      <span class="pub-authors">Minyeong Choe</span> and <span class="pub-authors">Hyunil Kim*</span>,
-      <span class="pub-title">Enhancing gradient inversion attacks through uniform initialization.</span>
-      <span class="pub-venue">The 14th International Conference on Smart Media & Applications</span> (2024).
-    </li>
-    <li>
-      <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
-      <span class="pub-title">자연어 처리를 위한 연합학습에서의 백도어 공격 동향 분석.</span>
-      <span class="pub-venue">2024 스마트미디어 춘계학술대회</span> (2024).
-    </li>
-  </ul>
-</div>
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-authors">Minyeong Choe</span>, Haehyun Cho, Changho Seo, and <span class="pub-authors">Hyunil Kim*</span>,
+        <span class="pub-title">Do All Autoregressive Transformers Remember Facts the Same Way? A Cross-Architecture Analysis of Recall Mechanisms.</span>
+        <span class="pub-venue">The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)</span>,
+        <span class="pub-meta">to appear (2025)</span>.
+      </li>
+      <li>
+        <span class="pub-authors">Minyeong Choe</span>, Cheolhee Park, Changho Seo, and <span class="pub-authors">Hyunil Kim*</span>,
+        <span class="pub-title">SDBA: A Stealthy and Long-Lasting Durable Backdoor Attack in Federated Learning.</span>
+        <span class="pub-venue">IEEE Transactions on Dependable and Secure Computing</span>,
+        <span class="pub-meta">accepted (IF 7.5 / Top 5.3% / JCR 2024) (2025)</span>.
+      </li>
+      <li>
+        임창훈, 김승한, <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
+        <span class="pub-title">연합학습 환경에서의 Triggerless Clean-label 백도어 공격 연구.</span>
+        <span class="pub-venue">한국정보보호학회 하계학술대회</span> (2025).
+      </li>
+      <li>
+        <span class="pub-authors">최민영</span>, 임창훈, 박경철, <span class="pub-authors">김현일*</span>,
+        <span class="pub-title">Causal tracing 기반 소형 언어 모델의 지식 저장 구조 및 백도어 취약 지점 분석.</span>
+        <span class="pub-venue">한국정보보호학회 하계학술대회</span> (2025).
+      </li>
+      <li>
+        <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
+        <span class="pub-title">연합학습에서 약한 차분 프라이버시와 다양한 방어 기법 결합을 통한 백도어 공격 방어 연구.</span>
+        <span class="pub-venue">한국정보보호학회논문지</span>, 2025.
+        <span class="pub-meta">(2024 한국정보보호학회 호남지부 우수논문상 수상 – 학술대회 발표 확장버전)</span>
+      </li>
+      <li>
+        Seunghan Kim, <span class="pub-authors">Minyeong Choe</span>, and <span class="pub-authors">Hyunil Kim*</span>,
+        <span class="pub-title">Enhancing the robustness of federated learning with unified defense against backdoor attack.</span>
+        <span class="pub-venue">The 14th International Conference on Smart Media & Applications</span>,
+        <span class="pub-meta">Best paper award (2024)</span>.
+      </li>
+      <li>
+        <span class="pub-authors">Minyeong Choe</span> and <span class="pub-authors">Hyunil Kim*</span>,
+        <span class="pub-title">Enhancing gradient inversion attacks through uniform initialization.</span>
+        <span class="pub-venue">The 14th International Conference on Smart Media & Applications</span> (2024).
+      </li>
+      <li>
+        <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
+        <span class="pub-title">자연어 처리를 위한 연합학습에서의 백도어 공격 동향 분석.</span>
+        <span class="pub-venue">2024 스마트미디어 춘계학술대회</span> (2024).
+      </li>
+    </ul>
+  </div>
 
+  <!-- Projects -->
   <div class="section">
     <h2>Projects</h2>
     <div class="item">
-      <div class="item-title">
-        <span>Dynamic Instructions Calculator (Tool)</span>
-        <span>Present</span>
+      <div class="item-head">
+        <div>Dynamic Instructions Calculator (Tool)</div>
+        <div class="item-meta">Present</div>
       </div>
       <ul>
         <li>Calculated CPU burst time with GDB instructions and cycles.</li>
       </ul>
     </div>
     <div class="item">
-      <div class="item-title">
-        <span>Saarthi - Notes (Flutter App)</span>
-        <span>Present</span>
+      <div class="item-head">
+        <div>Saarthi - Notes (Flutter App)</div>
+        <div class="item-meta">Present</div>
       </div>
       <ul>
         <li>Cross-platform app for buying/selling notes.</li>
@@ -172,27 +223,33 @@
     </div>
   </div>
 
-  <div class="section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span>
-      <span>C++</span>
-      <span>SQL</span>
-      <span>HTML/CSS</span>
-      <span>JavaScript</span>
-      <span>Git</span>
-    </div>
-  </div>
+<!-- Patents -->
+<div class="section">
+  <h2>Patents</h2>
+  <ul class="fancy-list">
+    <li>
+      <span class="patent-title">연합학습 보안성 향상을 위한 백도어 공격 방법.</span>
+      <span class="patent-meta">서창호, 정수용, 김현일, 최민영 — 출원번호: 10-2024-0153238 (2024)</span>
+    </li>
+  </ul>
+</div>
 
-  <div class="section">
-    <h2>Achievements</h2>
-    <ul>
-      <li>Contributed to 20+ open-source projects.</li>
-      <li>Solved 2000+ problems on LeetCode, GfG, Codeforces.</li>
-      <li>Qualified IIT-JEE Advanced 2020 (top 1.84%).</li>
-    </ul>
-  </div>
+<!-- Awards -->
+<div class="section">
+  <h2>Awards</h2>
+  <ul class="fancy-list">
+    <li>
+      <span class="award-title">Best Paper Award</span>,
+      <span class="award-meta">김승한, 최민영, 김현일 — 2024 SMA 컨퍼런스 (2024)</span>
+    </li>
+    <li>
+      <span class="award-title">우수논문상</span>,
+      <span class="award-meta">최민영, 김현일 — 한국정보보호학회 호남지부 (2024)</span>
+    </li>
+  </ul>
+</div>
 
+  <!-- Positions -->
   <div class="section">
     <h2>Positions of Responsibility</h2>
     <ul>
