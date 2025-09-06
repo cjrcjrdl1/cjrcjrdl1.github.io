@@ -59,6 +59,20 @@
       border-radius: 4px;
       font-size: 0.85em;
     }
+    /* Publications (LaTeX-ish) */
+  .pub-list{ list-style:none; margin:0; padding:0; }
+  .pub-list li{
+    position:relative; margin:8px 0 10px; padding-left:1.1em; line-height:1.45;
+    text-indent:0; /* 행걸침 유지 */
+  }
+  .pub-list li::before{ content:"•"; position:absolute; left:0; top:0; color:#666; }
+  
+  .pub-authors{ font-variant: small-caps; }        /* 영문 저자만 작은캡스 */
+  .pub-title{ font-style: italic; }                /* 제목은 기울임 + 한국어도 자연스러움 */
+  .pub-title::before{ content:"“"; }               /* 제목 따옴표 자동 */
+  .pub-title::after{ content:"”"; }
+  .pub-venue{ font-style: italic; }                /* 저널/학회명 기울임 */
+  .pub-meta{ color:#555; }                         /* accepted, 년도 등 */
   </style>
 </head>
 <body>
@@ -75,7 +89,7 @@
         <span>Gwangju, South Korea</span>
       </div>
       <div class="item-subtitle">Master of Engineering in Information and Communication Engineering</div>
-      <div>Dec 2018 – Jun 2025</div>
+      <div>Feb 2025 –</div>
     </div>
     <div class="item">
       <div class="item-title">
@@ -83,49 +97,55 @@
         <span>Gwangju, South Korea</span>
       </div>
       <div class="item-subtitle">Bachelor of Engineering in Information and Communication Engineering (Major in Information Security)</div>
-      <div>Dec 2018 – Jun 2025</div>
+      <div>Mar 2018 – Feb 2025</div>
     </div>
 
   <div class="section">
   <h2>Publications</h2>
-  <ul>
+  <ul class="pub-list">
     <li>
-      Minyeong Choe, Haehyun Cho, Changho Seo, and Hyunil Kim*, 
-      "Do All Autoregressive Transformers Remember Facts the Same Way? 
-      A Cross-Architecture Analysis of Recall Mechanisms." 
-      <em>The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)</em>, to appear (2025).
+      <span class="pub-authors">Minyeong Choe</span>, Haehyun Cho, Changho Seo, and <span class="pub-authors">Hyunil Kim*</span>,
+      <span class="pub-title">Do All Autoregressive Transformers Remember Facts the Same Way? A Cross-Architecture Analysis of Recall Mechanisms.</span>
+      <span class="pub-venue">The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP 2025)</span>,
+      <span class="pub-meta">to appear (2025)</span>.
     </li>
     <li>
-      Minyeong Choe, Cheolhee Park, Changho Seo, and Hyunil Kim*, 
-      "SDBA: A Stealthy and Long-Lasting Durable Backdoor Attack in Federated Learning." 
-      <em>IEEE Transactions on Dependable and Secure Computing</em>, accepted (IF 7.5 / Top 5.3% / JCR 2024) (2025).
+      <span class="pub-authors">Minyeong Choe</span>, Cheolhee Park, Changho Seo, and <span class="pub-authors">Hyunil Kim*</span>,
+      <span class="pub-title">SDBA: A Stealthy and Long-Lasting Durable Backdoor Attack in Federated Learning.</span>
+      <span class="pub-venue">IEEE Transactions on Dependable and Secure Computing</span>,
+      <span class="pub-meta">accepted (IF 7.5 / Top 5.3% / JCR 2024) (2025)</span>.
     </li>
     <li>
-      임창훈, 김승한, 최민영, 김현일*, "연합학습 환경에서의 Triggerless Clean-label 백도어 공격 연구." 
-      <em>한국정보보호학회 하계학술대회</em>, (2025).
+      임창훈, 김승한, <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
+      <span class="pub-title">연합학습 환경에서의 Triggerless Clean-label 백도어 공격 연구.</span>
+      <span class="pub-venue">한국정보보호학회 하계학술대회</span> (2025).
     </li>
     <li>
-      최민영, 임창훈, 박경철, 김현일*, "Causal tracing 기반 소형 언어 모델의 지식 저장 구조 및 백도어 취약 지점 분석." 
-      <em>한국정보보호학회 하계학술대회</em> (2025).
+      <span class="pub-authors">최민영</span>, 임창훈, 박경철, <span class="pub-authors">김현일*</span>,
+      <span class="pub-title">Causal tracing 기반 소형 언어 모델의 지식 저장 구조 및 백도어 취약 지점 분석.</span>
+      <span class="pub-venue">한국정보보호학회 하계학술대회</span> (2025).
     </li>
     <li>
-      최민영, 김현일*, "연합학습에서 약한 차분 프라이버시와 다양한 방어 기법 결합을 통한 백도어 공격 방어 연구." 
-      <em>한국정보보호학회논문지</em>, 2025. 
-      (2024 한국정보보호학회 호남지부 우수논문상 수상 - 학술대회 발표 확장버전)
+      <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
+      <span class="pub-title">연합학습에서 약한 차분 프라이버시와 다양한 방어 기법 결합을 통한 백도어 공격 방어 연구.</span>
+      <span class="pub-venue">한국정보보호학회논문지</span>, 2025.
+      <span class="pub-meta">(2024 한국정보보호학회 호남지부 우수논문상 수상 – 학술대회 발표 확장버전)</span>
     </li>
     <li>
-      Seunghan Kim, Minyeong Choe, and Hyunil Kim*, 
-      "Enhancing the robustness of federated learning with unified defense against backdoor attack." 
-      <em>The 14th International Conference on Smart Media & Applications</em>, Best paper award (2024).
+      Seunghan Kim, <span class="pub-authors">Minyeong Choe</span>, and <span class="pub-authors">Hyunil Kim*</span>,
+      <span class="pub-title">Enhancing the robustness of federated learning with unified defense against backdoor attack.</span>
+      <span class="pub-venue">The 14th International Conference on Smart Media & Applications</span>,
+      <span class="pub-meta">Best paper award (2024)</span>.
     </li>
     <li>
-      Minyeong Choe and Hyunil Kim*, 
-      "Enhancing gradient inversion attacks through uniform initialization." 
-      <em>The 14th International Conference on Smart Media & Applications</em> (2024).
+      <span class="pub-authors">Minyeong Choe</span> and <span class="pub-authors">Hyunil Kim*</span>,
+      <span class="pub-title">Enhancing gradient inversion attacks through uniform initialization.</span>
+      <span class="pub-venue">The 14th International Conference on Smart Media & Applications</span> (2024).
     </li>
     <li>
-      최민영, 김현일*, "자연어 처리를 위한 연합학습에서의 백도어 공격 동향 분석." 
-      <em>2024 스마트미디어 춘계학술대회</em> (2024).
+      <span class="pub-authors">최민영</span>, <span class="pub-authors">김현일*</span>,
+      <span class="pub-title">자연어 처리를 위한 연합학습에서의 백도어 공격 동향 분석.</span>
+      <span class="pub-venue">2024 스마트미디어 춘계학술대회</span> (2024).
     </li>
   </ul>
 </div>
