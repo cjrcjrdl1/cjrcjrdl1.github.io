@@ -1,13 +1,159 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minyeong Choe</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Minyeong Choe</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+    }
+    h1, h2, h3 {
+      font-weight: bold;
+      margin-bottom: 0.2em;
+    }
+    h1 {
+      font-size: 2em;
+      text-align: center;
+    }
+    .contact {
+      text-align: center;
+      font-size: 0.9em;
+      margin-bottom: 1.5em;
+    }
+    .section {
+      margin-bottom: 1.5em;
+    }
+    .section h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.6em;
+      font-size: 1.2em;
+      text-transform: uppercase;
+    }
+    .item {
+      margin-bottom: 0.8em;
+    }
+    .item-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+    .item-subtitle {
+      font-style: italic;
+      font-size: 0.9em;
+    }
+    ul {
+      margin: 0.3em 0 0.3em 1.2em;
+    }
+    .skills span {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 4px 8px;
+      margin: 2px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+  </style>
 </head>
 <body>
-    This is a Minyeong Choe's Website
+  <h1>Minyeong Choe</h1>
+  <div class="contact">
+    <a href="mailto:minyeong@chosun.ac.kr">minyeong@chosun.ac.kr</a> | <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-title">
+        <span>Chosun University</span>
+        <span>Gwangju, South Korea</span>
+      </div>
+      <div class="item-subtitle">Master of Engineering in Information and Communication Engineering</div>
+      <div>Dec 2018 – Jun 2025</div>
+    </div>
+  <div class="section">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-title">
+        <span>Chosun University</span>
+        <span>Gwangju, South Korea</span>
+      </div>
+      <div class="item-subtitle">Bachelor of Engineering in Information and Communication Engineering (Major in Information Security)</div>
+      <div>Dec 2018 – Jun 2025</div>
+    </div>
+
+  <div class="section">
+    <h2>Publications</h2>
+    <div class="item">
+      <div class="item-title">
+        <span>Organization Name</span>
+        <span>May 2021 – Jul 2021</span>
+      </div>
+      <div class="item-subtitle">Volunteer Work</div>
+      <ul>
+        <li>Implemented automation scripts to save 99% of time.</li>
+        <li>Designed official website with a team of 3 people.</li>
+        <li>Lectured on Git/GitHub and mentored 50+ students.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <div class="item">
+      <div class="item-title">
+        <span>Dynamic Instructions Calculator (Tool)</span>
+        <span>Present</span>
+      </div>
+      <ul>
+        <li>Calculated CPU burst time with GDB instructions and cycles.</li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="item-title">
+        <span>Saarthi - Notes (Flutter App)</span>
+        <span>Present</span>
+      </div>
+      <ul>
+        <li>Cross-platform app for buying/selling notes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python</span>
+      <span>C++</span>
+      <span>SQL</span>
+      <span>HTML/CSS</span>
+      <span>JavaScript</span>
+      <span>Git</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Achievements</h2>
+    <ul>
+      <li>Contributed to 20+ open-source projects.</li>
+      <li>Solved 2000+ problems on LeetCode, GfG, Codeforces.</li>
+      <li>Qualified IIT-JEE Advanced 2020 (top 1.84%).</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Positions of Responsibility</h2>
+    <ul>
+      <li>Training and Placement Coordinator</li>
+      <li>Core Team Member - Coding Club</li>
+      <li>Treasurer</li>
+    </ul>
+  </div>
 </body>
 </html>
